@@ -1,0 +1,16 @@
+name: Auto Faucet Visit
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Jalan setiap 30 menit
+  workflow_dispatch:  # Bisa dijalankan manual juga
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Visit Faucet
+        run: |
+          echo "Mengunjungi Faucet..."
+          curl -L "https://offerwall.me/faucet.php?sessKey=ec1feb8c115dc44be6952b817875a0b6fb4ff7be6b853b28c38a24bdb27a1cb2&token=355c1adc638d1c69c41d0a3a3ad2f800c0a8535a991209532830f6a39f00f895&token=9acf0e4ad217977360f3ba735a3c7611dd7a3ed424c7aedcb0865064cc559240"
